@@ -1,0 +1,74 @@
+details {
+	@media (prefers-color-scheme: light) {
+		--header-dropdown-bg: #ffffff;
+		--header-dropdown-text: #000;
+		--header-dropdown-item--hover: #66a4f5;
+	}
+
+	@media (prefers-color-scheme: dark) {
+		--header-dropdown-bg: #24292f;
+		--header-dropdown-text: #fff;
+		--header-dropdown-item--hover: #66a4f5;
+	}
+}
+
+:root {
+	--border-radius: 12px;
+	--border-radius-sm: 6px;
+	--border-radius-round: 50%;
+
+	//--color-accent: #009dff;
+	--color-accent: #e17800;
+	--color-autofill: #50a144;
+	--color-fucus: dodgerblue;
+
+	@media (prefers-color-scheme: light) {
+		--color-canvas-inset: #f6f8fa;
+		--color-canvas-subtle: #f6f8fa;
+		--color-canvas-default: #fff;
+
+		--color-bg: #fff;
+		--color-text: #000;
+		--color-text--invert: #fff;
+		--color-text-gray: #424242;
+
+		/* Border */
+		--color-border-default: #d0d7de;
+		--color-border-muted: hsla(210, 18%, 87%, 1);
+		--color-border-subtle: rgba(27, 31, 36, 0.15);
+
+		/* Shadow */
+		--color-shadow-small: 0 1px 0 rgba(27, 31, 36, 0.04);
+		--color-shadow-medium: 0 3px 6px rgba(140, 149, 159, 0.15);
+		--color-shadow-large: 0 8px 24px rgba(140, 149, 159, 0.2);
+		--color-shadow-extra-large: 0 12px 28px rgba(140, 149, 159, 0.3);
+	}
+
+	@media (prefers-color-scheme: dark) {
+		--color-canvas-inset: #010409;
+		--color-canvas-subtle: #161b22;
+		--color-canvas-default: #424242;
+
+		/*--color-bg: #24292f;*/
+		--color-bg: #0d1117;
+		--color-text: #fff;
+		--color-text--invert: #000;
+		--color-text-gray: #8b949e;
+
+		/* Border */
+		--color-border-default: #30363d;
+		--color-border-muted: #21262d;
+		--color-border-subtle: rgba(240, 246, 252, 0.1);
+
+		/* Shadow */
+		--color-shadow-small: 0 0 transparent;
+		--color-shadow-medium: 0 3px 6px #010409;
+		--color-shadow-large: 0 8px 24px #010409;
+		--color-shadow-extra-large: 0 12px 48px #010409;
+	}
+}
+
+:root {
+	color-scheme: light dark;
+	accent-color: var(--color-accent);
+}
