@@ -19,5 +19,6 @@
     "typescript": "^4.9.3",
     "vite": "^3.2.4",
     "vite-plugin-qrcode": "^0.2.0"
-  }
+  },
+  "packageManager": "pnpm@7.12.2"
 }
