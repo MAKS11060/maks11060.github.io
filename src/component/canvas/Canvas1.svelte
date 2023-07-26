@@ -17,8 +17,6 @@
 	onMount(() => {
 		const ctx = canvas.getContext('2d')
 
-		let raf: number
-
 		const hsla = (h, s, l, a) => `hsla(${h * 360}, ${s * 100}%, ${l * 100}%, ${a})`
 
 		return render(time => {
