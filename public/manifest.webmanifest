@@ -1,0 +1,9 @@
+{
+  "name": "maks11060.github.io",
+  "short_name": "maks11060.github.io",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#fff",
+  "description": "Personal GH page",
+  "icons": []
+}
