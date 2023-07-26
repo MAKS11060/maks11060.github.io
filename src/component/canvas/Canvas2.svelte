@@ -94,7 +94,7 @@
 	})
 
 	onMount(() => {
-		const observer = new ResizeObserver((entries) => {
+		const observer = new ResizeObserver(() => {
 			canvas.width = canvas.clientWidth
 			canvas.height = canvas.clientHeight - 1
 		})

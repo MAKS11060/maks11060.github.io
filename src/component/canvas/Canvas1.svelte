@@ -1,10 +1,11 @@
 <script lang="ts">
 	import {onMount} from 'svelte'
+	import {render} from '../../lib/utils.ts'
 
 	let canvas: HTMLCanvasElement
 
 	onMount(() => {
-		const observer = new ResizeObserver((entries) => {
+		const observer = new ResizeObserver(() => {
 			canvas.width = canvas.clientWidth
 			canvas.height = canvas.clientHeight - 1
 		})
@@ -20,7 +21,7 @@
 
 		const hsla = (h, s, l, a) => `hsla(${h * 360}, ${s * 100}%, ${l * 100}%, ${a})`
 
-		function render(time) {
+		return render(time => {
 			const {width, height} = canvas
 
 			ctx.clearRect(0, 0, width, height)
@@ -37,13 +38,7 @@
 			}
 
 			ctx.restore()
-
-			raf = requestAnimationFrame(render)
-		}
-
-		raf = requestAnimationFrame(render)
-
-		return () => cancelAnimationFrame(raf)
+		})
 	})
 
 </script>
