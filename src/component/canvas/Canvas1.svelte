@@ -1,5 +1,6 @@
 <script lang="ts">
   import {onMount} from 'svelte'
+  import {fRender} from '../../lib/utils.ts'
 
   let canvas: HTMLCanvasElement
 
