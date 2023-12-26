@@ -1,6 +1,6 @@
 <script lang="ts">
 	import {onMount} from 'svelte'
-	import {render} from '../../lib/utils.ts'
+  import {fRender} from '../../lib/utils.ts'
 
 	let canvas: HTMLCanvasElement
 	let pTime = 0
@@ -10,7 +10,7 @@
 		const ctx = canvas.getContext('2d')
 		let t = 0
 
-		return render(time => {
+		return fRender(time => {
 			const {width, height} = canvas
 
 			ctx.clearRect(0,0, width, height)
