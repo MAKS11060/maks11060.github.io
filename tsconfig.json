@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "ESNext",
-    "module": "ESNext",
+    "module": "NodeNext",
     "moduleResolution": "NodeNext",
     "allowSyntheticDefaultImports": true,
     "allowImportingTsExtensions": true,
@@ -9,9 +9,9 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "skipLibCheck": true,
+    "esModuleInterop": true,
     "allowJs": true,
     "checkJs": true,
-    "composite": true
   },
   "include": [
     "src/**/*.d.ts",

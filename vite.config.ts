@@ -9,12 +9,10 @@ export default defineConfig({
       plugins: [tailwindcss()],
     },
   },
-  
+
   plugins: [
     svelte({
-      preprocess: [
-        sveltePreprocess(),
-      ],
+      preprocess: [sveltePreprocess()],
     }),
   ],
 })
