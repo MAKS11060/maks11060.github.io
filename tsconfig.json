@@ -12,6 +12,7 @@
     "esModuleInterop": true,
     "allowJs": true,
     "checkJs": true,
+    "noEmit": true
   },
   "include": [
     "src/**/*.d.ts",
