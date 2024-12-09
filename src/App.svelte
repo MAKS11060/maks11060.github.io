@@ -8,8 +8,9 @@
   if (uri.searchParams.get('status') === '404') {
     console.log(Object.fromEntries(uri.searchParams.entries()))
     uri.searchParams.delete('status')
-    uri.pathname = uri.searchParams.get('path')
-    history.replaceState(null, '', uri.searchParams.get('path') ?? '/')
+    const prevUri = new URL(uri.searchParams.get('href'))
+    uri.pathname = prevUri.pathname
+    history.replaceState(null, '', uri ?? '/')
   }
 
   const pages = {
