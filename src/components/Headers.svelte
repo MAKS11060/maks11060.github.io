@@ -1,5 +1,5 @@
 <script lang="ts">
-  const uri = new URL(location.href)
+  const uri = $state(new URL(location.href))
 
   const pages = [
     {title: 'Main', href: '/'},

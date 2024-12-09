@@ -2,14 +2,14 @@
   import Links from './components/Links.svelte'
   import Main from './components/Main.svelte'
 
-  const uri = new URL(location.href)
-  if (uri.searchParams.has('status')) {
-    const status = Number(uri.searchParams.get('status'))
-    if (status === 404) {
-      uri.searchParams.delete('status')
-      console.log('from', status)
-      history.replaceState(null, '', uri.searchParams.get('path'))
-    }
+  let uri = $state(new URL(location.href))
+
+  // GitHub SPA 404 handler
+  if (uri.searchParams.get('status') === '404') {
+    console.log(Object.fromEntries(uri.searchParams.entries()))
+    uri.searchParams.delete('status')
+    uri.pathname = uri.searchParams.get('path')
+    history.replaceState(null, '', uri.searchParams.get('path') ?? '/')
   }
 
   const pages = {
@@ -17,19 +17,7 @@
     '/links': Links,
   }
 
-  let currentPages = pages[uri.pathname]
+  let currentPages = $derived(pages[uri.pathname] ?? pages['/'])
 </script>
 
-<svelte:component this={currentPages}/>
-
-<!-- <Layout>
-  {#each [...pages] as { component, href }}
-    {#if location.pathname.startsWith(href)}
-      <svelte:component this={component} />
-    {/if}
-  {/each}
-</Layout>
-
-{#if !pages.find((v) => location.pathname.startsWith(v.href))}
-  <Background />
-{/if} -->
+<svelte:component this={currentPages} />
