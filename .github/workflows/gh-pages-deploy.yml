@@ -1,11 +1,8 @@
-# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
-
 name: Deploy GitHub Pages
 
 on:
   push:
-    branches: [ "gh-pages" ]
+    branches: [gh-pages]
 
 jobs:
   build:
@@ -16,20 +13,21 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v2
-
-      - name: Use Node.js 20.x
-        uses: actions/setup-node@v4
+      - uses: actions/cache@v4
         with:
-          node-version: 20.x
-          cache: 'pnpm'
+          path: |
+            ~/.deno
+            ~/.cache/deno
+          key: ${{ runner.os }}-deno-${{ hashFiles('deno.lock') }}
 
-      - name: Install Deps
-        run: pnpm install
+      - name: Set up Deno
+        uses: denoland/setup-deno@v2
+
+      - name: Install deps
+        run: deno install
 
       - name: Build
-        run: pnpm run build
+        run: deno task build
 
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v3
@@ -38,12 +36,12 @@ jobs:
 
   deploy:
     name: Deploy
-    needs: [ build ]
+    needs: [build]
     runs-on: ubuntu-latest
-    
+
     permissions:
-      pages: write      # to deploy to Pages
-      id-token: write   # to verify the deployment originates from an appropriate source
+      pages: write # to deploy to Pages
+      id-token: write # to verify the deployment originates from an appropriate source
 
     # Deploy to the github-pages environment
     environment:
