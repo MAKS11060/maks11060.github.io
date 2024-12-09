@@ -1,7 +1,6 @@
 <script lang="ts">
-  import Background from './component/Background.svelte'
-  import Layout from './layout/Layout.svelte'
-  import {pages} from './store.ts'
+  import Links from './components/Links.svelte'
+  import Main from './components/Main.svelte'
 
   const uri = new URL(location.href)
   if (uri.searchParams.has('status')) {
@@ -12,9 +11,18 @@
       history.replaceState(null, '', uri.searchParams.get('path'))
     }
   }
+
+  const pages = {
+    '/': Main,
+    '/links': Links,
+  }
+
+  let currentPages = pages[uri.pathname]
 </script>
 
-<Layout>
+<svelte:component this={currentPages}/>
+
+<!-- <Layout>
   {#each [...pages] as { component, href }}
     {#if location.pathname.startsWith(href)}
       <svelte:component this={component} />
@@ -24,4 +32,4 @@
 
 {#if !pages.find((v) => location.pathname.startsWith(v.href))}
   <Background />
-{/if}
+{/if} -->

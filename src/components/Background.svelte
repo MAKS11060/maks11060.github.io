@@ -1,6 +1,3 @@
-<script lang="ts">
-</script>
-
 <div class="fixed inset-0 -z-10 hidden items-center justify-center dark:flex">
 	<div class="wrapper">
 		<div class="sun"></div>
