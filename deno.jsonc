@@ -1,9 +1,38 @@
 {
+  "tasks": {
+    "dev": "vite --host",
+    "build": "vite build",
+    "check": "svelte-check --tsconfig ./tsconfig.json",
+    "install": {
+      "command": "npm i && deno task pre-install && deno install && deno task post-install",
+    },
+    "pre-install": "mv package.json package.json.bak",
+    "post-install": "mv package.json.bak package.json"
+  },
+  "imports": {
+    "@deno/vite-plugin": "npm:@deno/vite-plugin@^1.0.4",
+    "@sveltejs/vite-plugin-svelte": "npm:@sveltejs/vite-plugin-svelte@^5.0.3",
+    "@tailwindcss/vite": "npm:@tailwindcss/vite@4.0.14",
+    "daisyui": "npm:daisyui@^5.0.0",
+    "svelte": "npm:svelte@^5.22.5",
+    "tailwindcss": "npm:tailwindcss@^4.0.11",
+    "vite": "npm:vite@^6.2.0"
+  },
+  "nodeModulesDir": "manual",
   "compilerOptions": {
     "lib": [
-      "window",
+      "dom",
       "esnext",
-      "dom"
+      "deno.ns"
     ]
-  }
+  },
+  "fmt": {
+    "semiColons": false,
+    "singleQuote": true,
+    "lineWidth": 120,
+    "indentWidth": 2
+  },
+  "unstable": [
+    "fmt-component"
+  ]
 }

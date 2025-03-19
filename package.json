@@ -1,21 +1,6 @@
 {
-  "name": "maks11060.github.io",
-  "private": true,
   "type": "module",
-  "scripts": {
-    "dev": "vite --host",
-    "build": "vite build",
-    "preview": "vite preview",
-    "check": "svelte-check --tsconfig ./tsconfig.json"
-  },
   "devDependencies": {
-    "@sveltejs/vite-plugin-svelte": "5.0.1",
-    "prettier-plugin-css-order": "2.1.2",
-    "prettier-plugin-tailwindcss": "0.6.9",
-    "svelte": "5.9.0",
-    "tailwindcss": "3.4.16",
-    "vite": "6.0.3",
-    "zod": "3.23.8",
-    "daisyui": "4.12.20"
+    "svelte5-router": "github:maks11060/svelte5-router"
   }
 }

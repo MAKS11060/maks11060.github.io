@@ -1,5 +1,5 @@
 import {svelte} from '@sveltejs/vite-plugin-svelte'
-import tailwind from 'tailwindcss'
+import tailwindcss from '@tailwindcss/vite'
 import {defineConfig, type Plugin} from 'vite'
 
 const noCrossOrigin = (): Plugin => {
@@ -15,13 +15,10 @@ const noCrossOrigin = (): Plugin => {
 export default defineConfig({
   plugins: [
     //
+    // deno(),
     svelte(),
+    tailwindcss(),
     // noCrossOrigin(),
   ],
-  css: {
-    postcss: {
-      plugins: [tailwind()],
-    },
-  },
-  // server: {hmr: {host: 'localhost', protocol: 'ws', clientPort: 5173}},
+  server: {hmr: {host: 'localhost', protocol: 'ws', clientPort: 5173}},
 })

@@ -1,7 +1,9 @@
 <script lang="ts">
+  import {Route, Router, navigate} from 'svelte5-router'
   import Links from './components/Links.svelte'
   import Main from './components/Main.svelte'
 
+  let url = $state('')
   let uri = $state(new URL(location.href))
 
   // GitHub SPA 404 handler
@@ -10,15 +12,12 @@
     uri.searchParams.delete('status')
     const prevUri = new URL(uri.searchParams.get('href'))
     uri.pathname = prevUri.pathname
-    history.replaceState(null, '', uri ?? '/')
+    navigate(uri.toString(), {replace: true})
+    // history.replaceState(null, '', uri ?? '/')
   }
-
-  const pages = {
-    '/': Main,
-    '/links': Links,
-  }
-
-  let currentPages = $derived(pages[uri.pathname] ?? pages['/'])
 </script>
 
-<svelte:component this={currentPages} />
+<Router {url}>
+  <Route path="/" component={Main} />
+  <Route path="/links" component={Links} />
+</Router>
