@@ -9,8 +9,9 @@
   // GitHub SPA 404 handler
   if (uri.searchParams.get('status') === '404') {
     console.log(Object.fromEntries(uri.searchParams.entries()))
-    uri.searchParams.delete('status')
     const prevUri = new URL(uri.searchParams.get('href'))
+    uri.searchParams.delete('status')
+    uri.searchParams.delete('href')
     uri.pathname = prevUri.pathname
     navigate(uri.toString(), {replace: true})
     // history.replaceState(null, '', uri ?? '/')
