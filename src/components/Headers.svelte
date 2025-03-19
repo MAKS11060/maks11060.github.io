@@ -1,4 +1,6 @@
 <script lang="ts">
+  import {Link} from 'svelte5-router'
+
   const uri = $state(new URL(location.href))
 
   const pages = [
@@ -12,9 +14,9 @@
     <ul class="flex gap-2">
       {#each pages as { href, title }}
         <li>
-          <a class="btn" class:btn-primary={uri.pathname === href} {href}>
+          <Link class="btn data-[active-link=page]:bg-primary" to={href}>
             {title}
-          </a>
+          </Link>
         </li>
       {/each}
     </ul>
