@@ -14,7 +14,6 @@
     uri.searchParams.delete('href')
     uri.pathname = prevUri.pathname
     navigate(uri.toString(), {replace: true})
-    // history.replaceState(null, '', uri ?? '/')
   }
 </script>
 
