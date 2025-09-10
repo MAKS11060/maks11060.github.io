@@ -6,7 +6,7 @@
  * })
  * cancel()
  * ```
- * */
+ */
 export const fRender = (cb: FrameRequestCallback): () => void => {
   let raf: number
 

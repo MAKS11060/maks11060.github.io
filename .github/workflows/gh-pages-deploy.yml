@@ -2,7 +2,8 @@ name: Deploy GitHub Pages
 
 on:
   push:
-    branches: [gh-pages]
+    branches:
+      - main
 
 jobs:
   build:
@@ -13,12 +14,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - uses: actions/cache@v4
-        with:
-          path: |
-            ~/.deno
-            ~/.cache/deno
-          key: ${{ runner.os }}-deno-${{ hashFiles('deno.lock') }}
+      # - uses: actions/cache@v4
+      #   with:
+      #     path: |
+      #       ~/.deno
+      #       ~/.cache/deno
+      #     key: ${{ runner.os }}-deno-${{ hashFiles('deno.lock') }}
 
       - name: Set up Deno
         uses: denoland/setup-deno@v2
@@ -26,7 +27,7 @@ jobs:
           cache: true
 
       - name: Install deps
-        run: deno task install
+        run: deno install
 
       - name: Build
         run: deno task build

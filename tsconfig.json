@@ -8,7 +8,8 @@
 
     "esModuleInterop": true,
     "isolatedModules": true,
-    "moduleResolution": "NodeNext",
+    // "moduleResolution": "NodeNext",
     "noEmit": true,
+    "strict": true
   }
 }
