@@ -1,20 +1,24 @@
 <script lang="ts">
   import {Link} from '@maks11060/svelte5-router'
 
-  const uri = $state(new URL(location.href))
+  interface Props {}
 
-  const pages = [
-    {title: 'Main', href: '/'},
-    {title: 'Links', href: '/links'},
+  let {}: Props = $props()
+  const links = [
+    {href: '/', title: 'Main'},
+    {href: '/cmd', title: 'cmd'},
   ]
 </script>
 
-<header class="navbar bg-base-100">
+<header class="navbar bg-base-300">
   <nav class="navbar-start">
-    <ul class="flex gap-2">
-      {#each pages as {href, title}}
+    <ul class="flex gap-1">
+      {#each links as {href, title}}
         <li>
-          <Link class="btn data-[active-link=page]:bg-primary" to={href}>
+          <Link
+            class="btn btn-primary not-data-[active-link=page]:btn-outline data-[active-link=step]:btn-accent"
+            to={href}
+          >
             {title}
           </Link>
         </li>
@@ -22,11 +26,11 @@
     </ul>
   </nav>
   <div class="navbar-center">
-    <span class="btn text-xl font-mono">MAKS11060</span>
+    <!-- <span class="font-mono text-xl btn">MAKS11060</span> -->
   </div>
   <div class="navbar-end">
     <ul>
-      <li>
+      <!-- <li>
         <a class="btn btn-link" href="https://github.com/maks11060">
           GitHub
           <img
@@ -36,7 +40,7 @@
             loading="lazy"
           />
         </a>
-      </li>
+      </li> -->
     </ul>
   </div>
 </header>

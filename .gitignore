@@ -6,4 +6,5 @@ node_modules/
 .env.test
 
 # generate output
+.vite
 dist

@@ -1,6 +1,0 @@
-{
-  "type": "module",
-  "devDependencies": {
-    "svelte5-router": "github:maks11060/svelte5-router"
-  }
-}

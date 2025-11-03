@@ -1,24 +1,26 @@
 <script lang="ts">
-  import {Route, Router, navigate} from 'svelte5-router'
-  import Links from './components/Links.svelte'
-  import Main from './components/Main.svelte'
+  import {navigate, Route, Router} from '@maks11060/svelte5-router'
 
-  let url = $state('')
+  import NotFound from './pages/404.svelte'
+  import Main from './pages/Main.svelte'
+
   let uri = $state(new URL(location.href))
 
   // GitHub SPA 404 handler
   if (uri.searchParams.get('status') === '404') {
     console.log(Object.fromEntries(uri.searchParams.entries()))
-    const prevUri = new URL(uri.searchParams.get('href'))
-    uri.searchParams.delete('status')
-    uri.searchParams.delete('href')
-    uri.pathname = prevUri.pathname
-    navigate(uri.toString(), {replace: true})
-    // history.replaceState(null, '', uri ?? '/')
+    const prevHref = uri.searchParams.get('href')
+    if (prevHref) {
+      uri.searchParams.delete('status')
+      uri.searchParams.delete('href')
+      uri.pathname = new URL(prevHref).pathname
+      navigate(uri.toString(), {replace: true})
+    }
   }
 </script>
 
-<Router {url}>
+<Router>
   <Route path="/" component={Main} />
-  <Route path="/links" component={Links} />
+
+  <Route component={NotFound} />
 </Router>
