@@ -1,4 +1,4 @@
-import { writable } from 'svelte/store'
+import {writable} from 'svelte/store'
 
 export const useLocalStorage = <T>(key: string, init: T) => {
   const store = writable<T>(init, (set) => {

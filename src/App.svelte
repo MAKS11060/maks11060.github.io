@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { navigate, Route, Router } from '@maks11060/svelte5-router'
+  import {navigate, Route, Router} from '@maks11060/svelte5-router'
 
   import NotFound from './pages/404.svelte'
   import Main from './pages/Main.svelte'

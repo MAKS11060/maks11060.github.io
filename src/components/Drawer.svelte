@@ -1,6 +1,6 @@
 <script lang="ts">
-  import type { Snippet } from 'svelte'
-  import type { ClassValue } from 'svelte/elements'
+  import type {Snippet} from 'svelte'
+  import type {ClassValue} from 'svelte/elements'
 
   let {
     content,
@@ -17,7 +17,7 @@
   } = $props()
 </script>
 
-<div class={['drawer', side === 'right' && 'drawer-end', rest.class]} data-theme="dark">
+<div class={['drawer', side === 'right' && 'drawer-end', rest.class]}>
   <input type="checkbox" class="drawer-toggle" bind:checked={open}>
   <div class="drawer-content">
     <!-- Page content here -->

@@ -1,7 +1,7 @@
 // import deno from '@deno/vite-plugin'
-import { svelte } from '@sveltejs/vite-plugin-svelte'
+import {svelte} from '@sveltejs/vite-plugin-svelte'
 import tailwindcss from '@tailwindcss/vite'
-import { defineConfig, type Plugin } from 'vite'
+import {defineConfig, type Plugin} from 'vite'
 
 const noCrossOrigin = (): Plugin => {
   return {
