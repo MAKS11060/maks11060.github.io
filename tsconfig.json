@@ -2,9 +2,13 @@
   "compilerOptions": {
     "target": "ESNext",
     "module": "NodeNext",
+    // "module": "esnext",
     "allowImportingTsExtensions": true,
     "rewriteRelativeImportExtensions": true,
     "verbatimModuleSyntax": true,
+
+    // "moduleResolution": "bundler",
+    "moduleResolution": "nodenext",
 
     "esModuleInterop": true,
     "isolatedModules": true,

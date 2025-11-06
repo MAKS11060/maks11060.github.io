@@ -5,19 +5,20 @@
     "build": "vite build"
   },
   "imports": {
-    // "@deno/vite-plugin": "npm:@deno/vite-plugin@^1.0.5",
+    "@deno/vite-plugin": "npm:@deno/vite-plugin@^1.0.5",
+    "@maks11060/crypto": "jsr:@maks11060/crypto@^0.4.0",
     "@maks11060/svelte5-router": "npm:@maks11060/svelte5-router@^3.1.1",
-    "@std/async": "jsr:@std/async@^1.0.14",
+    "@std/async": "jsr:@std/async@^1.0.15",
     "@std/cbor": "jsr:@std/cbor@^0.1.8",
     "@std/datetime": "jsr:@std/datetime@^0.225.5",
     "@std/encoding": "jsr:@std/encoding@^1.0.10",
-    "@sveltejs/vite-plugin-svelte": "npm:@sveltejs/vite-plugin-svelte@^6.1.3",
-    "@tailwindcss/vite": "npm:@tailwindcss/vite@^4.1.12",
-    "daisyui": "npm:daisyui@^5.0.54",
+    "@sveltejs/vite-plugin-svelte": "npm:@sveltejs/vite-plugin-svelte@^6.2.1",
+    "@tailwindcss/vite": "npm:@tailwindcss/vite@^4.1.16",
+    "daisyui": "npm:daisyui@^5.4.5",
     "jose": "npm:jose@^6.1.0",
-    "svelte": "npm:svelte@^5.38.6",
-    "tailwindcss": "npm:tailwindcss@^4.1.12",
-    "vite": "npm:vite@^7.1.3"
+    "svelte": "npm:svelte@^5.43.3",
+    "tailwindcss": "npm:tailwindcss@^4.1.16",
+    "vite": "npm:vite@^7.2.0"
   },
   "fmt": {
     "exclude": [
@@ -42,8 +43,10 @@
       // types for .ts
     ]
   },
-  "nodeModulesDir": "auto",
+  "nodeModulesDir": "manual",
   "unstable": [
-    "fmt-component"
+    "fmt-component",
+    "raw-imports"
+    // "tsgo"
   ]
 }

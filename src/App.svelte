@@ -3,6 +3,7 @@
 
   import NotFound from './pages/404.svelte'
   import Main from './pages/Main.svelte'
+  import Test1 from './pages/Test1.svelte'
 
   let uri = $state(new URL(location.href))
 
@@ -21,6 +22,8 @@
 
 <Router>
   <Route path="/" component={Main} />
+
+  <Route path="/test1" component={Test1} />
 
   <Route component={NotFound} />
 </Router>
