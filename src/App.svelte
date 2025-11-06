@@ -6,7 +6,9 @@
   import Test1 from './pages/Test1.svelte'
   import Codec from './pages/Tools/Codec.svelte'
   import Bookmarks from './pages/Tools/Parser/Bookmarks.svelte'
-  import Hash from './pages/Tools/Hash.svelte'
+  // import Hash from './pages/Tools/Hash.svelte'
+
+  const {default: Hash} = await import('./pages/Tools/Hash.svelte')
 
   let uri = $state(new URL(location.href))
 

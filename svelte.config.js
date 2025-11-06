@@ -5,4 +5,10 @@ export default {
     script: true,
     style: true,
   }),
+
+	compilerOptions: {
+		experimental: {
+			async: true
+		}
+	}
 }

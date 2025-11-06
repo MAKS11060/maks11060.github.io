@@ -1,11 +1,12 @@
 <script lang="ts">
-  import {crypto, DIGEST_ALGORITHM_NAMES} from '@std/crypto/crypto'
+  import {crypto, DIGEST_ALGORITHM_NAMES, type DigestAlgorithmName} from '@std/crypto/crypto'
+  // import type {DigestAlgorithmName} from '@std/crypto/crypto'
   import type {Snippet} from 'svelte'
   import {get} from 'svelte/store'
   import Layout from '../../components/Layout/Layout.svelte'
   import {useSessionStorage} from '../../lib/hooks.ts'
 
-  const algStore = useSessionStorage<typeof DIGEST_ALGORITHM_NAMES[number]>('hash-alg', 'BLAKE3')
+  const algStore = useSessionStorage<DigestAlgorithmName>('hash-alg', 'BLAKE3')
 
   let text = $state('')
   let inputFiles: FileList | undefined = $state()
@@ -13,11 +14,12 @@
   let output = $state(new Uint8Array())
 
   // options
-  let alg = $state<typeof DIGEST_ALGORITHM_NAMES[number]>(get(algStore))
+  let alg = $state<DigestAlgorithmName>(get(algStore))
   let inputSource = $state<'text' | 'file'>('text')
 
   $inspect(inputSource)
 
+  // const {crypto, DIGEST_ALGORITHM_NAMES} = await import('@std/crypto/crypto')
   const hash = async (input: Uint8Array<ArrayBuffer>) => {
     return new Uint8Array(await crypto.subtle.digest(alg, input))
   }
