@@ -14,7 +14,7 @@
     "isolatedModules": true,
     // "moduleResolution": "NodeNext",
     "noEmit": true,
-    "strict": true
+    "strict": true,
   },
   "exclude": [
     ".vite"

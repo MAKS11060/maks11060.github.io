@@ -4,7 +4,9 @@
   import NotFound from './pages/404.svelte'
   import Main from './pages/Main.svelte'
   import Test1 from './pages/Test1.svelte'
+  import Codec from './pages/Tools/Codec.svelte'
   import Bookmarks from './pages/Tools/Parser/Bookmarks.svelte'
+  import Hash from './pages/Tools/Hash.svelte'
 
   let uri = $state(new URL(location.href))
 
@@ -25,7 +27,10 @@
   <Route path="/" component={Main} />
 
   <Route path="/test1" component={Test1} />
+
   <Route path="/bookmarks" component={Bookmarks} />
+  <Route path="/codec" component={Codec} />
+  <Route path="/hash" component={Hash} />
 
   <Route component={NotFound} />
 </Router>

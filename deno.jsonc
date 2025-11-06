@@ -10,6 +10,7 @@
     "@maks11060/svelte5-router": "npm:@maks11060/svelte5-router@^3.1.1",
     "@std/async": "jsr:@std/async@^1.0.15",
     "@std/cbor": "jsr:@std/cbor@^0.1.8",
+    "@std/crypto": "jsr:@std/crypto@^1.0.5",
     "@std/datetime": "jsr:@std/datetime@^0.225.5",
     "@std/encoding": "jsr:@std/encoding@^1.0.10",
     "@sveltejs/vite-plugin-svelte": "npm:@sveltejs/vite-plugin-svelte@^6.2.1",
