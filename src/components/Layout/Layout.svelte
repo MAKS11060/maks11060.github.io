@@ -4,10 +4,11 @@
 
   interface Props {
     children: Snippet
+    title?: string
   }
 
-  let {children}: Props = $props()
+  let {children, title}: Props = $props()
 </script>
 
-<Header></Header>
+<Header {title}></Header>
 {@render children?.()}

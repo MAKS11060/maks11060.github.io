@@ -30,7 +30,7 @@
   })
 </script>
 
-<Layout>
+<Layout title="Hash">
   <main class="">
     {#snippet form(inputEl: Snippet)}
       <div class="m-4 bg-base-300 rounded-box border border-primary mb-8">

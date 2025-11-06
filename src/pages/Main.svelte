@@ -40,7 +40,7 @@
 </Drawer>
 
 {#snippet content()}
-  <Layout>
+  <Layout title="Main page">
     <!-- <button class="btn btn-primary" onclick={toggleDrawer}>Open</button> -->
     <!-- <h1 class="font-mono text-xl text-center">Empty page</h1> -->
 

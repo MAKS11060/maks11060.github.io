@@ -1,9 +1,11 @@
 <script lang="ts">
   import {Link} from '@maks11060/svelte5-router'
 
-  interface Props {}
+  interface Props {
+    title?: string
+  }
 
-  let {}: Props = $props()
+  let {title}: Props = $props()
   const links = [
     {href: '/', title: 'Main'},
   ]
@@ -25,7 +27,9 @@
     </ul>
   </nav>
   <div class="navbar-center">
-    <!-- <span class="font-mono text-xl btn">MAKS11060</span> -->
+    {#if title}
+      <span class="font-mono text-xl btn">{title}</span>
+    {/if}
   </div>
   <div class="navbar-end">
     <ul>
