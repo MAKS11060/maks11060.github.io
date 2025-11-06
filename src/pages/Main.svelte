@@ -44,7 +44,7 @@
       <section class="grid m-4">
         <h2 class="text-3xl">Tools</h2>
 
-        <ul class="mt-4 grid grid-cols-4">
+        <ul class="mt-4 grid grid-cols-2 md:grid-cols-3">
           {#each tools as tool}
             <li>
               <Link class="btn btn-lg btn-primary btn-outline" to={tool.href}>{tool.title}</Link>
