@@ -77,6 +77,6 @@
     {/snippet}
 
     {@render form(textInput)}
-    {@render form(fileInput)}
+    <!-- {@render form(fileInput)} -->
   </main>
 </Layout>
