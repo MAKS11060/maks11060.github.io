@@ -2,6 +2,18 @@
 /* https://tailwindcss.com/docs/functions-and-directives */
 @import 'tailwindcss';
 
+/* https://iconify.design/docs/usage/css/tailwind/tailwind4/ */
+/* @plugin "@iconify/tailwind4"; */
+@plugin '@iconify/tailwind4' {
+  prefix: 'iconify';
+  /* scale: 1.2; */
+  scale: 1.5;
+  prefixes: mdi;
+  /* mdi-light; */
+  /* vscode-icons, */
+  /* tabler; */
+}
+
 /* https://daisyui.com/theme-generator */
 /* https://daisyui.com/components/button */
 @plugin 'daisyui' {

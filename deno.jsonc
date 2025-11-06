@@ -47,6 +47,5 @@
   "unstable": [
     "fmt-component",
     "raw-imports"
-    // "tsgo"
   ]
 }

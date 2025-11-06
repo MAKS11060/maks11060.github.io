@@ -6,7 +6,6 @@
   let {}: Props = $props()
   const links = [
     {href: '/', title: 'Main'},
-    {href: '/cmd', title: 'cmd'},
   ]
 </script>
 

@@ -1,6 +1,8 @@
 {
   "type": "module",
   "dependencies": {
+    "@iconify/json": "^2.2.403",
+    "@iconify/tailwind4": "^1.1.0",
     "@maks11060/crypto": "npm:@jsr/maks11060__crypto@^0.4.0",
     "@std/async": "npm:@jsr/std__async@^1.0.15",
     "@std/cbor": "npm:@jsr/std__cbor@^0.1.8",

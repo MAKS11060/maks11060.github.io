@@ -3,8 +3,15 @@
   "headwind.runOnSave": true,
   "svg.preview.background": "editor",
   "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": false,
+  "typescript.preferences.organizeImports": {},
 
-  "[typescript]": { "editor.defaultFormatter": "denoland.vscode-deno" },
+  "[typescript]": {
+    "editor.defaultFormatter": "denoland.vscode-deno",
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "never",  // broken: svelte/store => svelte
+      "source.sortImports": "always"
+    }
+  },
   "[jsonc]": { "editor.defaultFormatter": "denoland.vscode-deno" },
   "[markdown]": { "editor.defaultFormatter": "denoland.vscode-deno" }
 }

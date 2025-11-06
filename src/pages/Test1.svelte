@@ -5,10 +5,7 @@
 
   let {}: Props = $props()
 
-  generateKeyPair('Ed25519').then(async k => {
+  generateKeyPair('Ed25519').then(async (k) => {
     console.log(await exportKey('hex', k.privateKey))
   })
-
 </script>
-
-123

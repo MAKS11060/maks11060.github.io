@@ -1,6 +1,6 @@
 import {writable} from 'svelte/store'
 
-export const useLocalStorage = <T>(key: string, init: T) => {
+export const useLocalStorage = <T>(key: string, init?: T) => {
   const store = writable<T>(init, (set) => {
     try {
       set(JSON.parse(localStorage.getItem(key) ?? 'null'))
@@ -21,7 +21,7 @@ export const useLocalStorage = <T>(key: string, init: T) => {
   return store
 }
 
-export const useSessionStorage = <T>(key: string, init: T) => {
+export const useSessionStorage = <T>(key: string, init?: T) => {
   const store = writable<T>(init, (set) => {
     try {
       set(JSON.parse(sessionStorage.getItem(key) ?? 'null'))
