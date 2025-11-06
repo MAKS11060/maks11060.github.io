@@ -18,18 +18,19 @@
   const sortOrderOptions = ['default', 'desc', 'asc'] as const
   const sortByOptions: (keyof typeof links[number])[] = ['href', 'date', 'title']
 
-  let options: {
+  const bookmarksOptionsStore = useSessionStorage<{
     outputFormat: typeof outputFormatOptions[number]
     sortOrder: typeof sortOrderOptions[number]
     sortBy: typeof sortByOptions[number]
-  } = $state({
+  }>('bookmarks-options', {
     outputFormat: 'Json',
     sortOrder: 'default',
     sortBy: 'date',
   })
 
-  const bookmarksOptionsStore = useSessionStorage<typeof options>('bookmarks-options')
-  options = get(bookmarksOptionsStore)
+  let options = $state(get(bookmarksOptionsStore))
+
+  // $inspect(options)
 
   // result
   let items = $derived.by(() => {

@@ -24,7 +24,7 @@ export const useLocalStorage = <T>(key: string, init?: T) => {
 export const useSessionStorage = <T>(key: string, init?: T) => {
   const store = writable<T>(init, (set) => {
     try {
-      set(JSON.parse(sessionStorage.getItem(key) ?? 'null'))
+      set(JSON.parse(sessionStorage.getItem(key) ?? 'null') ?? init)
     } catch (e) {
       console.error(e)
     }
